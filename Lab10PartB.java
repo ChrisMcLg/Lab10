@@ -84,7 +84,7 @@ public class Lab10PartB {
         int n = Integer.parseInt(scan.nextLine());
         int counter = 0;
         boolean check = true;
-        // makes sure the number is greter than 1 and gets every 
+        // makes sure the number is greater than 1 and then starting at w and building up every number gets divided by all numbers 2 until 1 less than itself it it doesnt get divided it adds to the count 
         if (n > 1) {
             for (int i = 2; i < n; i++) {
                 check=true;
