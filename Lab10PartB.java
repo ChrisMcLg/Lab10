@@ -84,6 +84,7 @@ public class Lab10PartB {
         int n = Integer.parseInt(scan.nextLine());
         int counter = 0;
         boolean check = true;
+        // makes sure the number is greter than 1 and gets every 
         if (n > 1) {
             for (int i = 2; i < n; i++) {
                 check=true;
@@ -101,58 +102,6 @@ public class Lab10PartB {
         
         System.out.println("There are: " + counter + " primes between 0 and " + n);
     }
-
-    /*
-     public static void Q3() { 
-
-    System.out.println("Q3: Enter how many numbers you want to check for primality: "); 
-
-    int n = Integer.parseInt(scan.nextLine()); 
-
-    int counter = 0; 
-
-    for (int i = 0; i < n; i++) { 
-
-    if (i < 2) 
-
-    continue; 
-
-    boolean check = true; 
-
- 
-
-    for (int j = 2; j * j <= i; j++) { 
-
-    if (i % j == 0) { 
-
-    check = false; 
-
-    break; 
-
-    } else { 
-
- 
-
-    } 
-
-    } 
-
-        if (check == true) { 
-
-        counter++; 
-
-        }  
-
-        else {} 
-
-    } 
-
- 
-
-        System.out.println("There are: " + counter + " primes between 0 and " + n); 
-
-    } 
-     */
 
     public static void Q4() {
         Random rng = new Random();
