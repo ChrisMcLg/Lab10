@@ -17,6 +17,7 @@ public class Lab10PartB {
             System.out.println("Pick a shape: square, rectangle, circle (or 'q' to quit)");
             String input = scan.nextLine();
             double a, b, r;
+            // initiallised variables at the start and used a swicth statement
             switch (input) {
                 case "q":
                     return;
@@ -51,6 +52,7 @@ public class Lab10PartB {
         int num = Integer.parseInt(scan.nextLine());
         System.out.println("Enter the current month: (1-12)");
         int num2 = Integer.parseInt(scan.nextLine());
+        // creates a suffix variable to see if "st", "nd", "rd", or "th" is used
         String suffix;
         int numLastDigit = num % 10;
         if (num >= 1 && num <= 31) {
@@ -64,14 +66,15 @@ public class Lab10PartB {
                 suffix = "th";
             }
             System.out.print("You selected " + num + suffix + " of ");
-        }else {
+        } else {
             System.out.println("Invalid Day");
         }
-        // creating an array and getting the number put in -1 
-        String[] months = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
-        if(num2>=1 && num2<=12){
-            System.out.println(months[num2-1]);
-        }else{
+        // creating an array and getting the number put in -1
+        String[] months = { "January", "February", "March", "April", "May", "June", "July", "August", "September",
+                "October", "November", "December" };
+        if (num2 >= 1 && num2 <= 12) {
+            System.out.println(months[num2 - 1]);
+        } else {
             System.out.println("Invalid month");
         }
     }
@@ -80,27 +83,76 @@ public class Lab10PartB {
         System.out.println("Q3: Enter how many numbers you want to check for primality: ");
         int n = Integer.parseInt(scan.nextLine());
         int counter = 0;
-        for (int i = 0; i < n; i++) {
-            if (i < 2)
-                continue;
-            boolean check = true;
-
-            for (int j = 2; j * j <= i; j++) {
-                if (i % j == 0) {
-                    check = false;
-                    break;
-                } else {
-
+        boolean check = true;
+        if (n > 1) {
+            for (int i = 2; i < n; i++) {
+                check=true;
+                for (int j = 2; j < i; j++) {
+                    //System.out.println(i + " % " + j);
+                    if (i % j == 0) {
+                        check = false;
+                    }
+                }
+                if(check){
+                    counter++;
                 }
             }
-            if (check == true) {
-                counter++;
-            } else {
-            }
         }
-
+        
         System.out.println("There are: " + counter + " primes between 0 and " + n);
     }
+
+    /*
+     public static void Q3() { 
+
+    System.out.println("Q3: Enter how many numbers you want to check for primality: "); 
+
+    int n = Integer.parseInt(scan.nextLine()); 
+
+    int counter = 0; 
+
+    for (int i = 0; i < n; i++) { 
+
+    if (i < 2) 
+
+    continue; 
+
+    boolean check = true; 
+
+ 
+
+    for (int j = 2; j * j <= i; j++) { 
+
+    if (i % j == 0) { 
+
+    check = false; 
+
+    break; 
+
+    } else { 
+
+ 
+
+    } 
+
+    } 
+
+        if (check == true) { 
+
+        counter++; 
+
+        }  
+
+        else {} 
+
+    } 
+
+ 
+
+        System.out.println("There are: " + counter + " primes between 0 and " + n); 
+
+    } 
+     */
 
     public static void Q4() {
         Random rng = new Random();
